@@ -1,0 +1,43 @@
+		<?php
+		$this->Widget->clear();
+		$this->Widget->create($this->_("GetkudosPlugin.admin_main", true));
+		$this->Form->create();
+		
+		?>
+		
+		<div class="inner">
+			<div class="title_row first">
+				<h3><?php $this->_("GetkudosPlugin.settings.basic_heading");?></h3>
+			</div>
+			<div class="pad">
+				<ul>
+					<li>
+						<?php
+						$this->Form->label($this->_("GetkudosPlugin.settings.field_siteName", true), "site_name");
+						$this->Form->fieldText("site_name", $this->Html->ifSet($settings['site_name']), array('id' => "site_name"));
+						?>
+						<span class="icon exclamation"></span><?php $this->_("GetkudosPlugin.settings.siteName_help");?>
+					</li>
+				
+				</ul>
+			</div>
+			
+			<div class="button_row">
+				<a class="btn_right submit" href=""><?php $this->_("GetkudosPlugin.settings.field_save");?></a>
+			</div>			
+			
+			<div class="title_row">
+				<h3><?php $this->_("GetkudosPlugin.settings.help_heading");?></h3>
+			</div>			
+			<div class="pad">
+				<p><span class="icon exclamation"></span><?php $this->_("GetkudosPlugin.settings.help_info");?></p>
+				<p><?php $this->_("GetkudosPlugin.settings.help_account");?> <a href="https://getkudos.me/signup/email" target="_blank" data-popup="true"><?php $this->_("GetkudosPlugin.settings.help_signup");?></a>.</p>
+			</div>
+			
+
+		</div>
+		
+		<?php
+		$this->Form->end();
+		$this->Widget->end();
+		?>
