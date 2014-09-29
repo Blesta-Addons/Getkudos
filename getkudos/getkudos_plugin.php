@@ -35,7 +35,7 @@ class GetkudosPlugin extends Plugin {
 		// Add the system overview table, *IFF* not already added
 		try {
 			$value = array('site_name' => "your_site_name_here" );
-			$this->Companies->setSetting($this->company_id , "AnnouncementsPlugin", serialize($value) );		
+			$this->Companies->setSetting($this->company_id , "GetkudosPlugin", serialize($value) );		
 		}
 		catch(Exception $e) {
 			// Error adding... no permission?
@@ -112,7 +112,7 @@ class GetkudosPlugin extends Plugin {
 		$this->GetkudosSettings = $this->Companies->getSetting($this->company_id , "GetkudosPlugin");
 		$settings = unserialize($this->GetkudosSettings->value) ;
 		
-			$return['body_end'] .= "
+			$return['body_end']['getkudos']= "
 				<!-- Start of GetKudos Script -->
 				<script>
 				(function(w,t,gk,d,s,fs){if(w[gk])return;d=w.document;w[gk]=function(){
